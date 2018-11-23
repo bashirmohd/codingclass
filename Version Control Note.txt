@@ -1,0 +1,58 @@
+Version Control Technology
+=============================
+GIT
+1. installation
+Git SCM installation on a local machine
+
+
+2. Link up local server to remote or get a copy of remote
+
+How to get remote repsoitory to talk to local repository:
+	1. get a copy of the remote serve/repo unto the local lappy => cloning 
+>git clone https://team-msc-2018.visualstudio.com/mscsharp.programs.repo/_git/mscsharp.programs.repo
+
+	2. add the address of the remote repo to the local
+>git remote add origin https://team-msc-2018.visualstudio.com/mscsharp.programs.repo/_git/mscsharp.programs.repo
+
+Server side of the version control using Git
+	Server(cloud/on-premises-hosted)
+	Must be running Git software
+	Cloud => GitHub, GitLab, BitBuctket, Vsts(TFS)
+		OR
+	On-premises => Server 2012 + Git 
+
+Client side => Desktop/Laptop/Mac/Linux
+	Client must be running git (git scm)
+
+
+
+Setup of Git on both servers and Clients
+========================================
+	Server is VSTS
+		Created a Team which has repo 
+			https://team-msc-2018.visualstudio.com/mscsharp.programs.repo/_git/mscsharp.programs.repo 
+	Client
+		Download and install Git SCM
+		Do git one time setup
+			$ git config --global user.name "Edwin Nwofor (Dotcom)"
+			$ git config --global user.email "edwin.nwofor@yahoo.com" 
+			$ git config --list   
+
+
+How to check-in codes in the Git server (VSTS)
+==============================================
+Assuming you have already cloned a repository
+1. Navigate inside of the repo and open up and batch
+	$ git status
+	$ git add --all(git add filename/git add ./ if a file name has sapces in it => git add 'file name')
+	$ git commit -m "Message to describe whatever you have done"
+	$ git fetch && git pull origin master (in case someone check-in before you)
+	$ git push origin master
+
+
+How to check-out codes in the Git Server(Vsts)
+==============================================
+Assuming you have already cloned a repository
+1. Navigate inside of the repo and open up and batch
+	$ git status
+	$ git fetch && git pull origin master (in case someone check-in before you)
